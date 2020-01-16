@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: rgba(254,236,190,0.5);
+    background-color: rgba(254, 236, 190, 0.5);
 }
 
 .container {
@@ -33,30 +33,7 @@ h1, h2, p {
     margin: 0.5em 0;
 }
 
-ul {
-    list-style: none;
-}
-
-ul li::before {
-    content: "\2022";
-    font-weight: bold;
-    width: 1em;
-    margin-left: -1em;
-    display: inline-block;
-    color: #F35B1C;
-}
-
-fieldset{
-    border: none;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-block-start: 0;
-    padding-inline-start: 0;
-    padding-inline-end: 0;
-    padding-block-end: 0;
-}
-
-.button{
+.button {
     padding: 1em;
     text-align: center;
     border-radius: 3px;
@@ -64,24 +41,20 @@ fieldset{
     display: block;
     width: 100%;
     margin-top: 5px;
-    color:white;
+    color: white;
     font-weight: bold;
 }
 
-.summary-text-box{
-    width: 100%;
-    margin: 0 0 5px;
-    padding: 0.5em;
-    background-color: rgba(211, 195, 154, 0.5);
+.text-center {
+    text-align: center;
 }
 
-.summary-title{
-    font-weight: bold;
+.text-justify {
+    text-align: justify;
 }
 
-.contacts-title {
-    margin: 5px 0;
-    font-weight: bold;
+.success {
+    text-align: justify;
 }
 
 .hide {

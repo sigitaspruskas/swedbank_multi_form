@@ -1,0 +1,52 @@
+#sumValue {
+    text-align: center;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+}
+
+fieldset {
+    border: none;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+}
+
+select {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 5px 0;
+    border: 3px solid #F35B1C;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+    background-color: white;
+    color: #512b2b;
+    border: 0.5px solid #512b2b;
+    padding: 5px 3px;
+    margin: 5px 0 0;
+    width: 100%;
+}
+
+.summary-text-box {
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 0.5em;
+    background-color: rgba(211, 195, 154, 0.5);
+}
+
+.summary-title {
+    font-weight: bold;
+}
+
+.contacts-title {
+    margin: 5px 0;
+    font-weight: bold;
+}

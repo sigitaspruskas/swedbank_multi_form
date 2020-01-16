@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/color.css">
-    <link rel="stylesheet" href="css/text.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/slider.css">
     <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <title>Swedbank Front End task</title>
 </head>
 
@@ -31,7 +33,7 @@
                     <li>Pinigai pervedami iškarto.</li>
                     <li>Pasiskolintą sumą galite grąžinti ankščiau laiko be papildomų mokesčių.</li>
                 </ul>
-                <input type="submit" value="Pildyti paraišką" class="button" onclick="goToForm()">
+                <input type="submit" value="Pildyti paraišką" class="button" id="intro-btn" onclick="goToForm()">
             </div>
         </div>
 
@@ -40,7 +42,7 @@
             <fieldset class="hide">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Norima skolintis suma</h2>                
+                    <h2>Norima skolintis suma</h2>
                     <p class="text-justify">
                         Nurodykite kokio dydžio paskolos norite.
                     </p>
@@ -56,7 +58,7 @@
             <fieldset class="hide">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Paskolos panaudojimas</h2>                
+                    <h2>Paskolos panaudojimas</h2>
                     <p class="text-justify">
                         Keliais sakiniais nurodykite paskirtį, kam bus naudojami paskolos pinigai.
                     </p>
@@ -71,7 +73,7 @@
             <fieldset class="hide" optional="choice">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Ar šiuo metu esate dirbantis?</h2>                
+                    <h2>Ar šiuo metu esate dirbantis?</h2>
                     <p class="text-justify">
                         Ar šiuo metu dirbate samdomą, ar kitokios pozicijos darbą?
                     </p>
@@ -93,7 +95,6 @@
             <fieldset class="hide">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Apžvalga</h2>                
                     <p class="text-justify">
                         Peržvelkite užpildytą informaciją.
                     </p>
@@ -116,16 +117,16 @@
                     <div id="job-text-box" class="summary-text-box">
                         <span class="summary-title">Laikas dabartinėje darbovietėje:</span>
                         <div id="job"></div>
-                    </div>                
+                    </div>
                     <p class="text-justify">
                         Tai paskutinis žingsnis.
                     </p>
                     <div class="contacts-title">Įveskite kontaktinius duomenis:</div>
                     <label><input type="text" id="name" placeholder="Vardas"></label>
                     <label><input type="text" id="surname" placeholder="Pavardė"></label>
-                    <label><input type="text" id="email" placeholder="El. paštas"></label>
+                    <label><input type="email" id="email" placeholder="El. paštas"></label>
                     <label><input type="text" id="phone" placeholder="Tel. nr."></label>
-                    <label><input type="text" id="age" placeholder="Amžius"></label>
+                    <label><input type="number" id="age" placeholder="Amžius"></label>
                     <div class="hide" id="err-msg"></div>
                     <input type="submit" value="Siųsti" class="button" onclick="nextBtn()">
                     <input type="submit" class="button" value="Grįžti" onclick="backBtn()">

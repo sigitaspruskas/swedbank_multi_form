@@ -1,0 +1,75 @@
+@media (min-width: 800px) {
+    body {
+        /* overflow-X: auto; */
+        padding: 1em;
+    }
+    .container {
+        margin: 0 auto;
+        padding: 1rem 1rem 1rem;
+        width: 800px;
+        height: calc(100vh - 2em);
+        background-color: #ffff;
+        overflow-X: auto;
+    }
+    .container::-webkit-scrollbar {
+        display: none;
+    }
+    h1 {
+        margin: 0 0 0.5em;
+    }
+    h1, h2, p {
+        text-align: center;
+    }
+    figure {
+        width: 400px;
+        float: right;
+    }
+    img {
+        height: 220px;
+    }
+    .intro p, .intro ul, .intro input {
+        width: 350px;
+    }
+    fieldset .text-justify {
+        text-align: center;
+    }
+    #intro-btn {
+        float: left;
+    }
+    .button {
+        margin: 5px auto;
+        width: 350px;
+    }
+    textarea {
+        background-color: rgba(254, 236, 190, 0.5);
+        border: 0.5px solid #512b2b;
+    }
+    select {
+        width: 350px;
+        display: block;
+        margin: 0 auto;
+    }
+    input[value="Kitas"], input[value="Siųsti"] {
+        float: right;
+    }
+    input[value="Grįžti"] {
+        float: left;
+    }
+    .success {
+        text-align: center;
+    }
+    .slide-in {
+        left: 1280px;
+        animation-delay: 0.2s;
+    }
+    @keyframes slide-out {
+        100% {
+            left: -1280px;
+        }
+    }
+    @keyframes slide-in {
+        100% {
+            left: 0px;
+        }
+    }
+}

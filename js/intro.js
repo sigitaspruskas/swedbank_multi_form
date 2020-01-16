@@ -123,7 +123,7 @@ function nextBtn() {
             const div = document.createElement('div')
             div.innerHTML = `
             <h2>Užklausa sėkmingai išsiųsta!</h2>                
-            <p class="text-justify">
+            <p class="success">
                 Gavome jūsų prašymą, mūsų konsultantai peržvelgs jį, ir susisieks su jumis per 3 darbo dienas.
             </p>`;
             currentStepContainer[currentStepId].className = 'hide';

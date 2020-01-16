@@ -15,15 +15,6 @@ h2, p, li, .summary-title {
     text-decoration: none;
 }
 
-input[type="text"] {
-    background-color: white;
-    color: #512b2b;
-    border: none;
-    padding: 5px 3px;
-    margin: 5px 0 0;
-    width: 100%;
-}
-
 .error {
     color: rgb(255, 25, 25);
 }
