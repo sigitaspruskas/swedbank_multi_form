@@ -1,0 +1,30 @@
+h1 {
+    color: #F35B1C;
+}
+
+h2, p, li{
+    color: #512b2b;
+}
+
+.button{
+    background-color: #F35B1C;
+}
+
+.button a {
+    color:white;
+    text-decoration: none;
+}
+
+input[type="text"] {
+    background-color: white;
+    color: #512b2b;
+    border: none;
+    padding: 5px 3px;
+    margin: 5px 0 0;
+    width: 100%;
+}
+
+.error {
+    /* background-color: rgb(168, 11, 11); */
+    color: rgb(255, 25, 25);
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/color.css">
+    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <title>Swedbank Front End task</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Welcome/Intro container -->
+        <div class="intro">
+            <h1>Greita paskola</h1>
+            <figure><img
+                    src="https://images.unsplash.com/photo-1549227082-0ea18ce30397?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+            </figure>
+            <h2>Grąžinkite per 5 metus</h2>
+            <div>
+                <p class="text-justify">
+                    Vartojimo paskola pravers, jei planuojate atnaujinti namus, remontuoti
+                    automobilį, įsigyti naujų baldų, buitinės technikos, ar kitą brangesnį daiktą.
+                </p>
+                <ul>
+                    <li>Paskola nuo iki 20 000 Eur.</li>
+                    <li>Pinigai pervedami iškarto.</li>
+                    <li>Pasiskolintą sumą galite grąžinti ankščiau laiko be papildomų mokesčių.</li>
+                </ul>
+                <div class="button intro-btn">Pildyti paraišką</div>
+            </div>
+        </div>
+
+        <form id="form">
+            <!-- Form questions, step 1: Amount of money and time -->
+            <fieldset class="hide">
+                <div>
+                    <h1>Vartojimo Paskolos paraiška</h1>
+                    <h2>Step 0</h2>
+                    <h2>Norima skolintis suma</h2>
+                    <div id="sumValue">1000 eur</div>
+                    <input type="range" id="moneySum" value="1000" min="1000" max="20000" step="1000"
+                        oninput="showInputValue(this.value)">
+                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
+                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                </div>
+            </fieldset>
+
+            <!-- Form questions, step 2: Purpose of mortgage? -->
+            <fieldset class="hide">
+                <div>
+                    <h1>Vartojimo Paskolos paraiška</h1>
+                    <h2>Step 1</h2>
+                    <h2>Paskolos panaudojimas</h2>
+                    <textarea id="text" cols="30" rows="6"></textarea>
+                    <div class="hide" id="err-msg"></div>
+                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
+                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                </div>
+            </fieldset>
+
+            <!-- Form questions, step 3: Are you working at the moment? -->
+            <fieldset class="hide">
+                <div>
+                    <h1>Vartojimo Paskolos paraiška</h1>
+                    <h2>Step 2</h2>
+                    <h2>Ar šiuo metu esate dirbantis?</h2>
+                    <select id="isEmployed">
+                        <option value="yes">Taip</option>
+                        <option value="no">Ne</option>
+                    </select>
+                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
+                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                </div>
+            </fieldset>
+
+            <!-- Form questions, step 4 OPTIONAL NOT WORKING: Do you have a spouse? -->
+            <fieldset class="hide">
+                <div>
+                    <h1>Vartojimo Paskolos paraiška</h1>
+                    <h2>Step 3</h2>
+                    <h2>Ar turite sutuoktinį?</h2>
+                    <select id="isMarried">
+                        <option value="yes">Taip</option>
+                        <option value="no">Ne</option>
+                    </select>
+                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
+                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                </div>
+            </fieldset>
+
+            <!-- Form questions, step 5 OPTIONAL WORKING: how long have you been working in your current job? -->
+            <fieldset class="hide">
+                <div>
+                    <h1>Vartojimo Paskolos paraiška</h1>
+                    <h2>Step 4</h2>
+                    <h2>Dabartinė darbovietė</h2>
+                    <select id="jobStatus">
+                        <option value="under6Months">Mažiau nei 6 mėn.</option>
+                        <option value="underOneYear">Tarp 6 mėn ir 1 metų</option>
+                        <option value="moreThanAYear">Daugiau nei 1 metai</option>
+                    </select>
+                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
+                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                </div>
+            </fieldset>
+
+            <!-- Form questions, step 6: Summary and contacts -->
+            <fieldset class="hide">
+                <div>
+                    <h1>Vartojimo Paskolos paraiška</h1>
+                    <h2>Apžvalga</h2>
+                    <div>
+                        <span>Norima skolintis suma</span>
+                        <div id="money"></div>
+                    </div>
+                    <div>
+                        <span>Panaudojimas</span>
+                        <div id="whatFor"></div>
+                    </div>
+                    <div>
+                        <span>Ar dirbate?</span>
+                        <div id="employed"></div>
+                    </div>
+                    <div>
+                        <span>Ar esate vedęs?</span>
+                        <div id="married"></div>
+                    </div>
+                    <div>
+                        <span>Laikas dabartinėje darbovietėje</span>
+                        <div id="job"></div>
+                    </div>
+                    <div>Įveskite kontaktinius duomenis:</div>
+                    <label><input type="text" id="name" placeholder="Vardas"></label>
+                    <label><input type="text" id="surname" placeholder="Pavardė"></label>
+                    <label><input type="text" id="email" placeholder="El. paštas"></label>
+                    <label><input type="text" id="phone" placeholder="Tel. nr."></label>
+                    <label><input type="text" id="age" placeholder="Amžius"></label>
+                    <div class="hide" id="err-msg"></div>
+                    <input type="submit" value="Siųsti" class="button" onclick="nextBtn()">
+                    <input class="button" value="Grįžti" onclick="loadStep()">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+    <script src="js/intro.js"></script>
+</body>
+
+</html>

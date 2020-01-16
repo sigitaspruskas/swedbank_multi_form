@@ -1,0 +1,22 @@
+.slide-out {
+    position: relative;
+    left: 0;
+    animation: slide-out 0.2s forwards;
+    /* animation-delay: 1s; */
+}
+
+.slide-in {
+    position: relative;
+    left: 320px;
+    animation: slide-in 0.2s forwards;
+    
+    animation-delay: 0.2s;
+}
+
+@keyframes slide-out {
+    100% { left: -320px; }
+}
+
+@keyframes slide-in {
+    100% { left: 0px; }
+}
