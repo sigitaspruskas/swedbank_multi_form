@@ -68,6 +68,22 @@ fieldset{
     font-weight: bold;
 }
 
+.summary-text-box{
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 0.5em;
+    background-color: rgba(211, 195, 154, 0.5);
+}
+
+.summary-title{
+    font-weight: bold;
+}
+
+.contacts-title {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
 .hide {
     display: none;
 }

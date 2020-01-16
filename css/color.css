@@ -1,8 +1,8 @@
-h1 {
+h1, .contacts-title {
     color: #F35B1C;
 }
 
-h2, p, li{
+h2, p, li, .summary-title {
     color: #512b2b;
 }
 
@@ -25,6 +25,5 @@ input[type="text"] {
 }
 
 .error {
-    /* background-color: rgb(168, 11, 11); */
     color: rgb(255, 25, 25);
 }

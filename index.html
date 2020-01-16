@@ -31,110 +31,96 @@
                     <li>Pinigai pervedami iškarto.</li>
                     <li>Pasiskolintą sumą galite grąžinti ankščiau laiko be papildomų mokesčių.</li>
                 </ul>
-                <div class="button intro-btn">Pildyti paraišką</div>
+                <input type="submit" value="Pildyti paraišką" class="button" onclick="goToForm()">
             </div>
         </div>
 
-        <form id="form">
-            <!-- Form questions, step 1: Amount of money and time -->
+        <form id="form" method="POST">
+            <!-- Form questions, step 1 -->
             <fieldset class="hide">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Step 0</h2>
-                    <h2>Norima skolintis suma</h2>
+                    <h2>Norima skolintis suma</h2>                
+                    <p class="text-justify">
+                        Nurodykite kokio dydžio paskolos norite.
+                    </p>
                     <div id="sumValue">1000 eur</div>
                     <input type="range" id="moneySum" value="1000" min="1000" max="20000" step="1000"
                         oninput="showInputValue(this.value)">
                     <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
-                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                    <input type="submit" value="Grįžti" class="button" onclick="closeForm()">
                 </div>
             </fieldset>
 
-            <!-- Form questions, step 2: Purpose of mortgage? -->
+            <!-- Form questions, step 2 -->
             <fieldset class="hide">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Step 1</h2>
-                    <h2>Paskolos panaudojimas</h2>
-                    <textarea id="text" cols="30" rows="6"></textarea>
+                    <h2>Paskolos panaudojimas</h2>                
+                    <p class="text-justify">
+                        Keliais sakiniais nurodykite paskirtį, kam bus naudojami paskolos pinigai.
+                    </p>
+                    <textarea id="text" cols="30" rows="6" maxlength="200"></textarea>
                     <div class="hide" id="err-msg"></div>
                     <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
-                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                    <input type="submit" value="Grįžti" class="button" onclick="backBtn()">
                 </div>
             </fieldset>
 
-            <!-- Form questions, step 3: Are you working at the moment? -->
-            <fieldset class="hide">
+            <!-- Form questions, step 3 -->
+            <fieldset class="hide" optional="choice">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Step 2</h2>
-                    <h2>Ar šiuo metu esate dirbantis?</h2>
+                    <h2>Ar šiuo metu esate dirbantis?</h2>                
+                    <p class="text-justify">
+                        Ar šiuo metu dirbate samdomą, ar kitokios pozicijos darbą?
+                    </p>
                     <select id="isEmployed">
                         <option value="yes">Taip</option>
                         <option value="no">Ne</option>
                     </select>
                     <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
-                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
+                    <input type="submit" value="Grįžti" class="button" onclick="backBtn()">
                 </div>
             </fieldset>
 
-            <!-- Form questions, step 4 OPTIONAL NOT WORKING: Do you have a spouse? -->
+            <!-- Form questions, step 4: content depends on step 3 answer -->
             <fieldset class="hide">
-                <div>
-                    <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Step 3</h2>
-                    <h2>Ar turite sutuoktinį?</h2>
-                    <select id="isMarried">
-                        <option value="yes">Taip</option>
-                        <option value="no">Ne</option>
-                    </select>
-                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
-                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
-                </div>
-            </fieldset>
-
-            <!-- Form questions, step 5 OPTIONAL WORKING: how long have you been working in your current job? -->
-            <fieldset class="hide">
-                <div>
-                    <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Step 4</h2>
-                    <h2>Dabartinė darbovietė</h2>
-                    <select id="jobStatus">
-                        <option value="under6Months">Mažiau nei 6 mėn.</option>
-                        <option value="underOneYear">Tarp 6 mėn ir 1 metų</option>
-                        <option value="moreThanAYear">Daugiau nei 1 metai</option>
-                    </select>
-                    <input type="submit" value="Kitas" class="button" onclick="nextBtn()">
-                    <input type="submit" value="Grįžti" class="button" onclick="loadStep()">
-                </div>
+                <div id="dependingOnAnswer"></div>
             </fieldset>
 
             <!-- Form questions, step 6: Summary and contacts -->
             <fieldset class="hide">
                 <div>
                     <h1>Vartojimo Paskolos paraiška</h1>
-                    <h2>Apžvalga</h2>
-                    <div>
-                        <span>Norima skolintis suma</span>
+                    <h2>Apžvalga</h2>                
+                    <p class="text-justify">
+                        Peržvelkite užpildytą informaciją.
+                    </p>
+                    <div class="summary-text-box">
+                        <span class="summary-title">Norima skolintis suma</span class="summary-title">
                         <div id="money"></div>
                     </div>
-                    <div>
-                        <span>Panaudojimas</span>
+                    <div class="summary-text-box">
+                        <span class="summary-title">Panaudojimas:</span>
                         <div id="whatFor"></div>
                     </div>
-                    <div>
-                        <span>Ar dirbate?</span>
+                    <div class="summary-text-box">
+                        <span class="summary-title">Ar dirbate?</span>
                         <div id="employed"></div>
                     </div>
-                    <div>
-                        <span>Ar esate vedęs?</span>
+                    <div id="married-text-box" class="summary-text-box">
+                        <span class="summary-title">Ar esate susituokęs?</span>
                         <div id="married"></div>
-                    </div>
-                    <div>
-                        <span>Laikas dabartinėje darbovietėje</span>
+                    </div class="">
+                    <div id="job-text-box" class="summary-text-box">
+                        <span class="summary-title">Laikas dabartinėje darbovietėje:</span>
                         <div id="job"></div>
-                    </div>
-                    <div>Įveskite kontaktinius duomenis:</div>
+                    </div>                
+                    <p class="text-justify">
+                        Tai paskutinis žingsnis.
+                    </p>
+                    <div class="contacts-title">Įveskite kontaktinius duomenis:</div>
                     <label><input type="text" id="name" placeholder="Vardas"></label>
                     <label><input type="text" id="surname" placeholder="Pavardė"></label>
                     <label><input type="text" id="email" placeholder="El. paštas"></label>
@@ -142,7 +128,7 @@
                     <label><input type="text" id="age" placeholder="Amžius"></label>
                     <div class="hide" id="err-msg"></div>
                     <input type="submit" value="Siųsti" class="button" onclick="nextBtn()">
-                    <input class="button" value="Grįžti" onclick="loadStep()">
+                    <input type="submit" class="button" value="Grįžti" onclick="backBtn()">
                 </div>
             </fieldset>
         </form>

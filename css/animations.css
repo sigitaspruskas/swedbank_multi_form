@@ -7,6 +7,7 @@
 
 .slide-in {
     position: relative;
+    top: 0;
     left: 320px;
     animation: slide-in 0.2s forwards;
     
@@ -18,5 +19,8 @@
 }
 
 @keyframes slide-in {
-    100% { left: 0px; }
+    100% { 
+        left: 0px;
+        top: 0;
+    }
 }
